@@ -17,12 +17,14 @@ const card = (card_id = 'card') => {
                 if (!e.target) {
                     return;
                 }
+                const caretPos = e.target.selectionStart;
                 const {value} = e.target;
-                let newValue = value.replace(/\D/g, '');
+                let newValue = value.replace(/\D/g,'');
                 if (newValue.length > 3) {
                     newValue = newValue.substr(0, 4);
                 }
                 e.target.value = newValue;
+                e.target.selectionStart = e.target.selectionEnd = caretPos;
             });
             card.addEventListener('blur', (e) => {
                 if (!e.target) {
