@@ -6,6 +6,7 @@ const card = (card_id = 'card') => {
     }
     return newValue;
   }
+
   const cards = document.getElementById(card_id);
   const cardInputs = cards.querySelectorAll('input');
   cardInputs.forEach((card) => {
@@ -23,10 +24,12 @@ const card = (card_id = 'card') => {
       e.target.value = newValue;
       e.target.selectionStart = e.target.selectionEnd = caretPos;
       if (caretPos > 3) {
-        const next = e.target.nextElementSibling;
-        if (next) {
-          next.focus();
-          next.selectionStart = next.selectionEnd = 0;
+        if (e.target.parentElement && e.target.parentElement.nextElementSibling) {
+          const next = e.target.parentElement.nextElementSibling.querySelector('input')
+          if (next) {
+            next.focus();
+            next.selectionStart = next.selectionEnd = 0;
+          }
         }
       }
     });
