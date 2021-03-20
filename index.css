@@ -39,6 +39,7 @@ input {
 
 .card__number {
 	display: flex;
+	justify-content: center;
 	width: 80%;
 	margin-bottom: 20px;
 }
