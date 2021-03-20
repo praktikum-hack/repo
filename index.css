@@ -1,0 +1,58 @@
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	background-color: #333;
+	height: 100%;
+}
+
+input {
+	width: 100%;
+	line-height: 1;
+}
+
+.main {
+	height: 100%;
+	display: flex;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	width: 70%;
+	height: 60%;
+	background-color: #aaa;
+	border-radius: 5px;
+}
+
+.card__number {
+	display: flex;
+	width: 80%;
+}
+
+.card__number-block {
+	margin-right: 10px;
+	margin-bottom: 20px;
+}
+
+.card__name {
+	display: flex;
+	margin-bottom: 20px;
+}
+
+.card__name-block {
+	margin-right: 10px;
+}
+
+.card__data {
+	display: flex;
+}
+
+.card__data-block {
+	width: 100px;
+	margin-right: 10px;
+}
