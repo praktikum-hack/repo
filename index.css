@@ -9,15 +9,18 @@ html, body {
 
 input {
 	width: 100%;
+	height: 100%;
 	line-height: 1;
 }
 
 .main {
 	height: 100%;
 	display: flex;
+	overflow-y: auto;
 }
 
 .card {
+	padding: 20px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -25,6 +28,8 @@ input {
 	margin: auto;
 	width: 70%;
 	height: 60%;
+	min-width: 600px;
+	min-height: 400px;
 	background-color: #aaa;
 	border-radius: 5px;
 }
@@ -32,11 +37,11 @@ input {
 .card__number {
 	display: flex;
 	width: 80%;
+	margin-bottom: 20px;
 }
 
 .card__number-block {
 	margin-right: 10px;
-	margin-bottom: 20px;
 }
 
 .card__name {
@@ -50,9 +55,30 @@ input {
 
 .card__data {
 	display: flex;
+	margin-bottom: 20px;
 }
 
 .card__data-block {
 	width: 100px;
 	margin-right: 10px;
+}
+
+.card__cvc {
+	display: flex;
+	width: 100%;
+	justify-content: flex-end;
+}
+
+.card__cvc-block {
+	width: 100px;
+}
+
+.card__block-title {
+	margin: 0;
+	padding: 0;
+	margin-right: 10px;
+}
+
+.card__title {
+	text-transform: uppercase;
 }
