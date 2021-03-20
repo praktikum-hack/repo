@@ -1,17 +1,16 @@
-
-const card = (card_id = 'card') => {
+const card = (selector = 'card') => {
     const padZero = (v) => {
         let newValue = `0000${v}`;
         if (newValue.length > 3) {
             newValue = newValue.substr(newValue.length - 4, 4);
         }
         return newValue;
-    }
-    const cards = document.getElementById(card_id);
+    };
+    const cards = document.querySelector(selector);
     const cardInputs = cards.querySelectorAll('input');
     cardInputs.forEach((card) => {
 
-        if(card.dataset.type==='card-number') {
+        // if (card.dataset.type === 'card-number') {
             card.value = padZero(card.value);
             card.addEventListener('input', (e) => {
                 if (!e.target) {
@@ -19,7 +18,7 @@ const card = (card_id = 'card') => {
                 }
                 const caretPos = e.target.selectionStart;
                 const {value} = e.target;
-                let newValue = value.replace(/\D/g,'');
+                let newValue = value.replace(/\D/g, '');
                 if (newValue.length > 3) {
                     newValue = newValue.substr(0, 4);
                 }
@@ -33,29 +32,38 @@ const card = (card_id = 'card') => {
                 const {value} = e.target;
                 e.target.value = padZero(value);
             });
-        }
-        else if(card.dataset.type==='card-name') {
+        // }
+    });
+};
+
+const initName = (selector = 'card') => {
+    const cards = document.querySelector(selector);
+    const cardInputs = cards.querySelectorAll('input');
+    cardInputs.forEach(card => {
+        // if (card.dataset.type === 'card-name') {
 
             card.addEventListener('input', (e) => {
                 if (!e.target) {
                     return;
                 }
 
-                e.target.value.replace(/[А-Яа-я\W]+/,'')
-                e.target.value = e.target.value.toUpperCase()
+                e.target.value = e.target.value.toUpperCase().replace(/[^A-Z\s]+/, '');
             });
             card.addEventListener('blur', (e) => {
                 if (!e.target) {
                     return;
                 }
-                if(nameOnblur.search(/^[A-Z\s]{2,30}$/) !== 0) {
-                    e.target.classList.add('valid')
-                    e.target.classList.remove('error')
+                if (e.target.value.search(/^[A-Z\s]{2,30}$/) === 0) {
+                    e.target.classList.add('valid');
+                    e.target.classList.remove('error');
                 } else {
-                    e.target.classList.remove('valid')
-                    e.target.classList.add('error')
+                    e.target.classList.remove('valid');
+                    e.target.classList.add('error');
                 }
             });
-        }
-    })
-}
+        // }
+    });
+};
+
+card('.card__number')
+initName('.card__name')

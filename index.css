@@ -56,3 +56,11 @@ input {
 	width: 100px;
 	margin-right: 10px;
 }
+
+input.error {
+  border: 1px solid red;
+}
+
+input.valid {
+  border: 1px solid green;
+}
