@@ -29,6 +29,7 @@ input {
 	margin: auto;
 	width: 70%;
 	height: 60%;
+	max-width: 1000px;
 	min-width: 600px;
 	min-height: 400px;
 	background-color: #aaa;
