@@ -24,8 +24,10 @@ const card = (card_id = 'card') => {
       e.target.selectionStart = e.target.selectionEnd = caretPos;
       if (caretPos > 3) {
         const next = e.target.nextElementSibling;
-        next.focus();
-        next.selectionStart = next.selectionEnd = 0;
+        if (next) {
+          next.focus();
+          next.selectionStart = next.selectionEnd = 0;
+        }
       }
     });
     card.addEventListener('blur', (e) => {
