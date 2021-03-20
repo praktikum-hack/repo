@@ -1,5 +1,6 @@
 * {
 	box-sizing: border-box;
+	font-size: 24px;
 }
 
 html, body {
@@ -55,7 +56,12 @@ input {
 
 .card__data {
 	display: flex;
+	align-items: center;
 	margin-bottom: 20px;
+}
+
+.card__data span {
+	margin-right: 10px;
 }
 
 .card__data-block {
@@ -81,4 +87,5 @@ input {
 
 .card__title {
 	text-transform: uppercase;
+	font-size: 30px;
 }
