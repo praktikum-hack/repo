@@ -67,7 +67,6 @@ const initName = (selector = 'card') => {
                 e.target.classList.add('error');
             }
         });
-        // }
     });
 };
 
